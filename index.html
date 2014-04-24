@@ -5,55 +5,15 @@
 		<title>Ken's Thing</title>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="http://192.168.56.101/pm/assets/thickbox/thickbox.js"></script>
-		<script type="text/javascript" src="assets/scripts/jquery.scrollTo.min.js"></script>
-		<link rel="stylesheet" href="assets/styles/main.css" type="text/css" />
+		<script src="assets/scripts/signup.js"></script>
+		<script src="assets/scripts/mailgun.js"></script>
+		<script src="assets/scripts/mailgun-validator.js"></script>
 		<link rel="stylesheet" type="text/css" media="screen" href="http://192.168.56.101/pm/assets/thickbox/thickbox.css" />
-		<script type="text/javascript">
-			jQuery(function( $ ){
-				var $paneTarget = $('#signUpForm form');
-			
-				$('#nav1').click(function(){
-					$('nav#signUpBreadcrumb ul li').removeClass('active');
-					$('#nav1').parent().addClass('active');
-					$paneTarget.stop().scrollTo( '#section1', 600 );
-					return false;
-				});
-				$('#nav2').click(function(){
-					$('nav#signUpBreadcrumb ul li').removeClass('active');
-					$('#nav2').parent().addClass('active');
-					$paneTarget.stop().scrollTo( '#section2', 600 );
-					return false;
-				});
-				$('#nav3').click(function(){
-					$('nav#signUpBreadcrumb ul li').removeClass('active');
-					$('#nav3').parent().addClass('active');
-					$paneTarget.stop().scrollTo( '#section3', 600 );
-					return false;
-				});
-
-				$('form[name=signUpForm]').submit(function() {
-					return false;
-				});
-
-				$('#input1').click(function(){
-					$('nav#signUpBreadcrumb ul li').removeClass('active');
-					$('#nav2').parent().addClass('active');
-					$paneTarget.stop().scrollTo( '#section2', 600 );
-				});
-				$('#input2').click(function(){
-					$('nav#signUpBreadcrumb ul li').removeClass('active');
-					$('#nav3').parent().addClass('active');
-					$paneTarget.stop().scrollTo( '#section3', 600 );
-				});
-
-			});
-		</script>
+		<link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+		<link rel="stylesheet" href="assets/styles/main.css" type="text/css" />
 	</head>
 	<body>
-		<!--div id="control">
-			<h1>XXX Sign Up Form</h1>
-			<a href="#TB_inline?width=44&height=19&inlineId=addContact" class="thickbox">Make the magic happen</a>
-		</div-->
 		<div id="signUp">
 			<nav id="signUpBreadcrumb">
 				<ul>
@@ -71,10 +31,12 @@
 								<li>
 									<label for="email">Your email address:</label>
 									<input type="text" id="email" name="email" placeholder="user@example.com">
+									<span id="emailValidity" class="formValidation"></span>
 								</li>
 								<li>
-									<label for="password">Your password:</label>
-									<input type="password" id="password" name="password">
+									<label for="password">Your password: <span class="info">( minimum 5 characters )</span></label>
+									<input type="password" id="password" name="password" id="password">
+									<span id="passwordStrength" class="formValidation"></span>
 								</li>
 								<li>
 									<input type="submit" value="Continue" class="submit" id="input1">
@@ -89,10 +51,12 @@
 								<li>
 									<label for="firstname">Your first name:</label>
 									<input type="text" id="firstname" name="firstname" placeholder="Yimmy">
+									<span id="firstValidity" class="formValidation"></span>
 								</li>
 								<li>
 									<label for="lastname">Your last name:</label>
 									<input type="text" id="lastname" name="lastname" placeholder="Mcgee">
+									<span id="lastValidity" class="formValidation"></span>
 								</li>
 								<li>
 									<input type="submit" value="Continue" class="submit" id="input2">
@@ -107,6 +71,7 @@
 								<li>
 									<label for="companyname">Company name:</label>
 									<input type="text" id="companyname" name="companyname" placeholder="Acme Inc.">
+									<span id="companyValidity" class="formValidation"></span>
 								</li>
 								<li>
 									<label for="companyweb">Company website:</label>
@@ -114,6 +79,7 @@
 										http://
 									</p>
 									<input type="text" id="companyweb" name="companyweb" class="httpInput" placeholder="example.com">
+									<span id="websiteValidity" class="formValidation"></span>
 								</li>
 								<li>
 									<input type="submit" value="Submit" class="submit" id="input3">
