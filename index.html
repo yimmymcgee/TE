@@ -4,90 +4,137 @@
 		<meta charset="utf-8" />
 		<title>Ken's Thing</title>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		<script src="http://192.168.56.101/pm/assets/thickbox/thickbox.js"></script>
 		<script src="assets/scripts/signup.js"></script>
 		<script src="assets/scripts/mailgun.js"></script>
+		<script src="assets/scripts/colorbox-master/jquery.colorbox-min.js"></script>
 		<script src="assets/scripts/mailgun-validator.js"></script>
-		<link rel="stylesheet" type="text/css" media="screen" href="http://192.168.56.101/pm/assets/thickbox/thickbox.css" />
 		<link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
 		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+		<link rel="stylesheet" href="assets/scripts/colorbox-master/colorbox.css" type="text/css" />
 		<link rel="stylesheet" href="assets/styles/main.css" type="text/css" />
 	</head>
 	<body>
-		<div id="signUp">
-			<nav id="signUpBreadcrumb">
-				<ul>
-					<li class="active"><a href="#" class="navItem" id="nav1">Essentials</a></li>
-					<li><a href="#" class="navItem" id="nav2">Getting to Know You</a></li>
-					<li><a href="#" class="navItem" id="nav3">Your Company</a></li>
-				</ul>
-			</nav>
-			<div id="signUpForm">
-				<form name="signUpForm">
-					<section id="section1" class="section">
-						<h3>Email &amp; Password</h3>
-						<fieldset>
-							<ul id="formSection1" class="formSection">
-								<li>
-									<label for="email">Your email address:</label>
-									<input type="text" id="email" name="email" placeholder="user@example.com">
-									<span id="emailValidity" class="formValidation"></span>
-								</li>
-								<li>
-									<label for="password">Your password: <span class="info">( minimum 5 characters )</span></label>
-									<input type="password" id="password" name="password" id="password">
-									<span id="passwordStrength" class="formValidation"></span>
-								</li>
-								<li>
-									<input type="submit" value="Continue" class="submit" id="input1">
-								</li>
-							</ul>
-						</fieldset>
-					</section>
-					<section id="section2" class="section">
-						<h3>Getting to Know You</h3>
-						<fieldset>
-							<ul id="formSection2" class="formSection">
-								<li>
-									<label for="firstname">Your first name:</label>
-									<input type="text" id="firstname" name="firstname" placeholder="Yimmy">
-									<span id="firstValidity" class="formValidation"></span>
-								</li>
-								<li>
-									<label for="lastname">Your last name:</label>
-									<input type="text" id="lastname" name="lastname" placeholder="Mcgee">
-									<span id="lastValidity" class="formValidation"></span>
-								</li>
-								<li>
-									<input type="submit" value="Continue" class="submit" id="input2">
-								</li>
-							</ul>
-						</fieldset>
-					</section>
-					<section id="section3" class="section">
-						<h3>Your company</h3>
-						<fieldset>
-							<ul id="formSection2" class="formSection">
-								<li>
-									<label for="companyname">Company name:</label>
-									<input type="text" id="companyname" name="companyname" placeholder="Acme Inc.">
-									<span id="companyValidity" class="formValidation"></span>
-								</li>
-								<li>
-									<label for="companyweb">Company website:</label>
-									<p class="httpHelper">
-										http://
-									</p>
-									<input type="text" id="companyweb" name="companyweb" class="httpInput" placeholder="example.com">
-									<span id="websiteValidity" class="formValidation"></span>
-								</li>
-								<li>
-									<input type="submit" value="Submit" class="submit" id="input3">
-								</li>
-							</ul>
-						</fieldset>
-					</section>
-				</form>
+		<div id="content">
+			<h1>Marketing Town</h1>
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum dolor ut erat fringilla volutpat. Aenean egestas nunc ac nulla sollicitudin iaculis. Integer molestie aliquam massa quis tempor. Nunc tincidunt turpis enim, et laoreet nunc tincidunt ac. Vestibulum a varius arcu, et ornare nibh. Vivamus sed leo commodo neque pellentesque porttitor. liquam vehicula nisi ut justo pulvinar, sit amet congue erat auctor.
+			</p>
+			<p>
+				<a href="#why" class="colorbox">Sign up now!</a>
+			</p>
+			<p>
+				Ut cursus adipiscing sem, nec sodales purus elementum a. Proin pulvinar mi porta diam egestas euismod. Proin ut tellus ullamcorper, pretium turpis sed, aliquet libero. Maecenas eget lorem posuere, lobortis neque non, laoreet enim. Nullam risus lacus, blandit sed mollis sed, ullamcorper at urna. Donec fermentum dignissim neque, eget vestibulum turpis. Suspendisse convallis non ante in congue. Aliquam erat volutpat. Nunc posuere, velit in sagittis convallis, dolor dui viverra sapien, eget sollicitudin lectus nunc fermentum dolor. Curabitur bibendum euismod felis, non posuere orci dictum aliquam. Cras eu enim venenatis, scelerisque nibh eget, tincidunt massa. Vestibulum ante ante, tempus vitae mattis ut, laoreet vel enim. Duis eget lacus eget mauris iaculis fringilla id et diam. Mauris a tortor eget diam eleifend dignissim ac sed lorem.
+			</p>
+			<p>
+				Aenean lorem magna, congue ut est a, cursus sagittis velit. Praesent est nulla, tincidunt quis quam eget, blandit eleifend enim. Pellentesque congue nunc malesuada blandit rhoncus. Pellentesque condimentum fringilla porta. Morbi porttitor rutrum rutrum. Quisque cursus odio a nisi scelerisque, nec rhoncus mauris gravida. Donec ultricies, lectus a pharetra laoreet, lacus urna lacinia urna, ac commodo nibh eros eu libero. Praesent placerat sem a arcu lacinia, ut vulputate lorem interdum. Sed eleifend luctus quam at viverra. Nunc dapibus ut arcu ut posuere. Curabitur eu convallis magna, sed vehicula risus.
+			</p>
+			<p>
+				Pellentesque condimentum placerat libero. Vestibulum eleifend vestibulum arcu, in varius orci egestas non. Etiam diam nisl, tristique in sagittis a, tristique faucibus dolor. Suspendisse gravida magna non nisl lacinia, a egestas nibh pretium. Quisque diam urna, facilisis nec sodales eu, rhoncus sit amet risus. Maecenas commodo elementum augue, non porttitor turpis. Fusce felis sapien, feugiat quis vulputate eget, feugiat eget urna.
+			</p>
+			<p>
+				Fusce semper felis non diam aliquet auctor. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut quis tellus lorem. Suspendisse nec tempor lectus, nec ultrices purus. Suspendisse egestas vitae velit sed mattis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin mattis urna ante, vel porta est tempor id.
+			</p>
+			<p>
+				Morbi id orci lacus. Fusce tempus nisl vel nisi condimentum auctor. Praesent orci justo, facilisis et sodales quis, molestie in nibh. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque ut diam odio. Morbi ullamcorper ultrices rutrum. Suspendisse turpis mi, volutpat ac purus et, fringilla sagittis est.
+			</p>
+			<p>
+				Morbi quis tincidunt felis. In blandit arcu purus, vel commodo lacus rhoncus a. Duis mauris nisl, lacinia et nisl ac, congue semper neque. Proin felis justo, blandit a ornare vulputate, fringilla sit amet arcu. Proin sodales nisl non auctor blandit. Cras in fermentum dui. Mauris a velit vel ligula eleifend adipiscing. Ut pharetra magna eros, id condimentum risus rhoncus et. Aliquam vel scelerisque mauris, non vestibulum turpis.
+			</p>
+			<p>
+				Maecenas orci massa, vulputate quis lorem convallis, pretium suscipit purus. Nam eu cursus mi. Maecenas in quam consequat, tempus nunc eget, feugiat orci. Sed nulla turpis, porttitor at massa et, dictum consectetur turpis. Donec ornare auctor neque, mollis laoreet nisl dapibus id. Aenean lacus ante, tincidunt at facilisis ut, imperdiet sit amet mi. Nam suscipit ornare justo eget ullamcorper. Fusce pretium pharetra laoreet.
+			</p>
+			<p>
+				Integer nec sapien nibh. Sed ullamcorper tellus et est ultricies pharetra. Proin purus quam, fringilla non cursus ultricies, imperdiet vitae ipsum. Aliquam pretium convallis luctus. Mauris nec pretium leo, ut dignissim erat. Nulla non consectetur augue. Duis fringilla orci ut metus interdum sagittis. Vivamus et nisi nibh. Suspendisse feugiat erat sit amet lorem bibendum congue. Fusce iaculis facilisis eleifend. Integer dictum viverra hendrerit.
+			</p>
+			<p>
+				Etiam vel egestas justo, non fermentum sem. Morbi egestas suscipit dictum. Nunc viverra erat et tortor fringilla, a fringilla lorem ornare. Mauris at lorem quis ipsum mattis luctus vitae sit amet urna. Sed luctus lacus urna, id iaculis neque tempor quis. Etiam vitae commodo diam. Proin nec luctus risus, vel suscipit massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis sodales lorem et erat accumsan tempor.
+			</p>
+			<p>
+				Cras non eros vitae nunc luctus vestibulum. Aliquam vitae scelerisque libero, eget vulputate nulla. Curabitur elementum rhoncus ante venenatis ullamcorper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pulvinar rutrum dolor, non pellentesque sem commodo et. Morbi id turpis a nulla dictum tincidunt. Sed semper turpis non nisi placerat, commodo scelerisque lorem sollicitudin. Proin sagittis eleifend tempus. Aliquam luctus sem adipiscing libero fringilla, non consectetur justo varius.
+			</p>
+			<p>
+				Donec venenatis dui porttitor ullamcorper lacinia. Praesent sem nunc, scelerisque a massa ut, viverra porta dolor. Aliquam sed aliquam turpis, elementum congue eros. Sed malesuada, turpis eu condimentum dignissim, orci neque vestibulum justo, sed dapibus sem velit eu eros. Sed tempor justo id pharetra ultricies. Integer sodales turpis et condimentum pharetra. In ornare euismod pulvinar. 
+			</p>
+		</div>
+		<div id="signUp" style="display:none">
+			<div id="why">
+				<nav id="signUpBreadcrumb">
+					<ul>
+						<li class="active"><a href="#" class="navItem" id="nav1">Essentials</a></li>
+						<li><a href="#" class="navItem" id="nav2">Getting to Know You</a></li>
+						<li><a href="#" class="navItem" id="nav3">Your Company</a></li>
+					</ul>
+				</nav>
+				<div id="signUpDetails">
+					<form name="signUpForm" id="signUpForm">
+						<section id="section1" class="section">
+							<h3>Email &amp; Password</h3>
+							<fieldset>
+								<ul id="formSection1" class="formSection">
+									<li>
+										<label for="email">Your email address:</label>
+										<input type="text" id="email" name="email" placeholder="user@example.com">
+										<span id="emailValidity" class="formValidation"></span>
+									</li>
+									<li>
+										<label for="password">Your password: <span class="info">( minimum 5 characters )</span></label>
+										<input type="password" id="password" name="password" id="password">
+										<span id="passwordStrength" class="formValidation"></span>
+									</li>
+									<li>
+										<input type="submit" value="Continue" class="submit" id="input1">
+										<p>or <a href="#close" class="colorboxclose">Cancel</a></p>
+									</li>
+								</ul>
+							</fieldset>
+						</section>
+						<section id="section2" class="section">
+							<h3>Getting to Know You</h3>
+							<fieldset>
+								<ul id="formSection2" class="formSection">
+									<li>
+										<label for="firstname">Your first name:</label>
+										<input type="text" id="firstname" name="firstname" placeholder="Yimmy">
+										<span id="firstValidity" class="formValidation"></span>
+									</li>
+									<li>
+										<label for="lastname">Your last name:</label>
+										<input type="text" id="lastname" name="lastname" placeholder="Mcgee">
+										<span id="lastValidity" class="formValidation"></span>
+									</li>
+									<li>
+										<input type="submit" value="Continue" class="submit" id="input2">
+										<p>or <a href="#close" class="colorboxclose">Cancel</a></p>
+									</li>
+								</ul>
+							</fieldset>
+						</section>
+						<section id="section3" class="section">
+							<h3>Your company</h3>
+							<fieldset>
+								<ul id="formSection2" class="formSection">
+									<li>
+										<label for="companyname">Company name:</label>
+										<input type="text" id="companyname" name="companyname" placeholder="Acme Inc.">
+										<span id="companyValidity" class="formValidation"></span>
+									</li>
+									<li>
+										<label for="companyweb">Company website:</label>
+										<p class="httpHelper">
+											http://
+										</p>
+										<input type="text" id="companyweb" name="companyweb" class="httpInput" placeholder="example.com">
+										<span id="websiteValidity" class="formValidation"></span>
+									</li>
+									<li>
+										<input type="submit" value="Submit" class="submit" id="input3">
+										<p>or <a href="#close" class="colorboxclose">Cancel</a></p>
+									</li>
+								</ul>
+							</fieldset>
+						</section>
+					</form>
+				</div>
 			</div>
 		</div>
 	</body>

@@ -3,8 +3,40 @@ var validPassword = false;
 
 jQuery(function( $ ){
 
+	$(".colorbox").colorbox({inline:true, width:"50%", closeButton:false, overlayClose:false});
+
+	$(".colorboxclose").click(function() {
+		$.colorbox.close();
+	});
+
 	$("input").keypress(function(e) {
+
 		if(e.which == 13) {
+			if (this.id == "input1" || this.id == "password") {
+				if(validPassword && validEmail) {
+					focusControl(2,"slow","#firstname");
+				} else {
+					contentControl("#email","#emailValidity",true);
+					contentControl("#password","#passwordStrength");
+				}
+				return false;
+			} else if (this.id == "input2" || this.id == "lastname") {
+				if ($("#firstname").val() != "" && $("#lastname").val() != "") {
+					focusControl(3,"slow","#companyname");
+				} else {
+					contentControl("#firstname","#firstValidity");
+					contentControl("#lastname","#lastValidity");
+				}
+				return false;
+			} else if (this.id == "input3" || this.id == "companyweb") {
+				if ($("#companyweb").val() != "" && $("#companyname").val() != "") {
+					$("#signUpForm").submit();
+				} else {
+					contentControl("#companyname","#companyValidity");
+					contentControl("#companyweb","#websiteValidity");
+				}
+				return false;
+			}
 			var inputs = $(this).closest('form').find(':input');
 			inputs.eq( inputs.index(this)+ 1 ).focus();
 			return false;
@@ -12,62 +44,52 @@ jQuery(function( $ ){
 	});
 	
 	focusControl(1,0);
-				
-	$( "#nav1" ).click(function() {
-		focusControl(1,"slow");
+
+	$("#signUpBreadcrumb a").click(function() {
 		return false;
-	});
-	$( "#nav2, #input1" ).click(function() {
+	})
+
+	$( "#input1" ).click(function() {
 		if(validPassword && validEmail) {
-			focusControl(2,"slow");
+
+			// silently submit
+
+			focusControl(2,"slow","#firstname");
 		} else {
-			if ($("#email").val() == "") {
-				$("#emailValidity").html("<aside><i class='fa  fa-exclamation-circle bad'></i></aside>");
-			}
-			if ($("#password").val() == "") {
-				$("#passwordStrength").html("<aside><i class='fa  fa-exclamation-circle bad'></i></aside>");
-			}
+			contentControl("#email","#emailValidity");
+			contentControl("#password","#passwordStrength");
 		}
 		return false;
 	});
-	$( "#nav3, #input2" ).click(function() {
+	$( "#input2" ).click(function() {
 		if ($("#firstname").val() != "" && $("#lastname").val() != "") {
-			focusControl(3,"slow");
+
+			// silently submit
+
+			focusControl(3,"slow","#companyname");
 		} else {
-			if ($("#firstname").val() == "") {
-				$("#firstValidity").html("<aside><i class='fa  fa-exclamation-circle bad'></i></aside>");
-			} else {
-				$("#firstValidity").html("");
-			}
-			if ($("#lastname").val() == "") {
-				$("#lastValidity").html("<aside><i class='fa  fa-exclamation-circle bad'></i></aside>");
-			} else {
-				$("#lastValidity").html("");
-			}
+			contentControl("#firstname","#firstValidity");
+			contentControl("#lastname","#lastValidity");
 		}
 		return false;
 	});
 
 	//submit
 	$("#input3").click(function() {
-		if ($("#companyweb").val() != "" && $("#companyname").val() != "") {
-			// pass
-		} else {
-			if ($("#companyname").val() == "") {
-				// put ! in field
-				$("#companyValidity").html("<aside><i class='fa  fa-exclamation-circle bad'></i></aside>");
-			} else {
-				$("#companyValidity").html("");
-			}
-			if ($("#companyweb").val() == "") {
-				// put ! in field
-				$("#websiteValidity").html("<aside><i class='fa  fa-exclamation-circle bad'></i></aside>");
-			} else {
-				$("#websiteValidity").html("");
-			}
+		if ($("#companyweb").val() == "" || $("#companyname").val() == "") {
+			contentControl("#companyname","#companyValidity")
+			contentControl("#companyweb","#websiteValidity")
 			return false;
 		}
 	});
+
+	function contentControl(field, notice) {
+		if ($(field).val() == "") {
+			$(notice).html("<aside><i class='fa  fa-exclamation-circle bad'></i></aside>");
+		} else {
+			$(notice).html("");
+		}
+	}
 
 	$( "#password" ).on('input',function(e){
 		var passw = $('#password').val();
@@ -81,11 +103,13 @@ jQuery(function( $ ){
 		}
 	});
 
-	function focusControl(target,speed) {
-		$('.section').slideUp(speed);
+	function focusControl(target,speed,focusTarget) {
+		$('.section').slideUp('fast');
 		$('nav#signUpBreadcrumb ul li').removeClass('active');
 		if (target != null) {
-			$('#section'+target).slideDown(speed);
+			$('#section'+target).slideDown(speed, function() {
+				$(focusTarget).focus();
+			});
 			$('#nav'+target).parent().addClass('active');
 		}
 	}
